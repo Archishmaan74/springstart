@@ -1,7 +1,7 @@
 package com.springstart.archishmaan.springstart;
 
-public class ProdDB implements DB {
+public class DevDB implements DB{
     public String getData(){
-        return "Prod Data";
+        return "Dev Data";
     }
 }
