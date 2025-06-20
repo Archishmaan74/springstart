@@ -17,7 +17,6 @@ public class FirstSpringProjectApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		db = new ProdDB();
 		System.out.println(db.getData());
 	}
 }
