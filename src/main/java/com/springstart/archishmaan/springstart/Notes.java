@@ -45,4 +45,51 @@ public class Notes {
     //This file is used to define settings for your Spring Boot app like project.mode=development. Spring reads these properties at startup to control how the application behaves.
     //✅ You can define server ports, logging levels, database URLs, and more here.
     //✅ It allows dynamic configuration without touching Java code.
+
+    //✅ MVC in Spring Boot (Model - View - Controller)
+    //MVC stands for Model - View - Controller, and it's a pattern used to structure web applications.
+    //It separates the application into three parts: how data is handled (Model), how user requests are processed (Controller),
+    // and how the output is presented (View).
+    //This helps make the code organized, easy to manage, and flexible.
+    //
+    //In Spring Boot, when a user sends a request (like opening a webpage or calling an API), the Controller handles it.
+    // The Controller may fetch data from a Model and then return it as a View (like an HTML page or JSON).
+    //
+    //Key Points about MVC:
+    //Model: Represents data (usually Java classes like Book, User, etc.).
+    //
+    //View: What the user sees — HTML (Thymeleaf) or JSON (in APIs).
+    //
+    //Controller: Handles user requests using @Controller or @RestController.
+    //
+    //Helps in clean separation of logic and UI.
+    //
+    //Used for both UI-based and REST API applications.
+
+
+
+    //✅ Layered Architecture in Spring Boot (3-Tier)
+    //Layered Architecture (also called 3-Tier Architecture) divides the backend logic into Presentation, Service, and Persistence layers.
+    //This structure ensures that each part of your app has a clear responsibility, making it more maintainable and scalable.
+    //
+    //In a Spring Boot app, the Presentation layer is your @Controller, the Service layer holds business rules (@Service),
+    // and the Persistence layer handles database access (@Repository).
+    //You can reuse the same layers across different parts of your app — making development cleaner and easier.
+    //
+    //Key Points about Layered Architecture:
+    //Presentation Layer: Handles incoming requests (usually Controllers).
+    //
+    //Service Layer: Contains the actual business logic.
+    //
+    //Persistence Layer: Talks to the database and fetches/saves data.
+    //
+    //Improves testability and modularity.
+    //
+    //Easier to manage large-scale projects with this structure.
+
+
+    //✅ Difference Between MVC and Layered Architecture:
+    //MVC is about how a request flows — from Controller to Model to View.
+    //
+    //Layered Architecture is about how the code is organized internally — into Controller, Service, and Repository layers.
 }
