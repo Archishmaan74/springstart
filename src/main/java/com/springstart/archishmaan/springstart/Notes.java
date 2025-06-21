@@ -92,4 +92,30 @@ public class Notes {
     //MVC is about how a request flows — from Controller to Model to View.
     //
     //Layered Architecture is about how the code is organized internally — into Controller, Service, and Repository layers.
+
+    //DTO (Data Transfer Object)
+    //Used to transfer only the required data between layers.
+    //
+    //Not mapped to any database table.
+    //
+    //Contains no database annotations.
+    //
+    //Makes API responses cleaner, smaller, and more secure.
+    //
+    //Good for hiding sensitive fields or combining multiple objects.
+    //
+    //Used in: Service and Presentation layers (@Service → @Controller)
+
+    //Entity
+    //Represents a table in the database.
+    //
+    //Mapped directly to database columns.
+    //
+    //Contains database-related annotations like @Entity, @Id, etc.
+    //
+    //Used to perform CRUD operations with the database.
+    //
+    //Can expose extra or sensitive data if sent directly to the UI.
+    //
+    //Used in: Persistence layer (@Repository and @Service)
 }
