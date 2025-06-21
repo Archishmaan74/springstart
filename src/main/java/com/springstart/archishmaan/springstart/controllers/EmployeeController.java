@@ -6,13 +6,21 @@ package com.springstart.archishmaan.springstart.controllers;
 //POST /employees
 //DELETE /employees/{id}
 
+import com.springstart.archishmaan.springstart.dto.EmployeeDTO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDate;
 
 @RestController
 public class EmployeeController {
     @GetMapping(path = "/employees")
-    public String getEmployees(){
-        return "Employees";
+    public EmployeeDTO getEmployees(){
+        return new EmployeeDTO(
+                72L,
+                "Archishmaan",
+                LocalDate.of(2025, 6, 21),
+                true
+        );
     }
 }
