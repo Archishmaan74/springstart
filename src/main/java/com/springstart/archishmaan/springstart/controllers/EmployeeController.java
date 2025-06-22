@@ -8,16 +8,17 @@ package com.springstart.archishmaan.springstart.controllers;
 
 import com.springstart.archishmaan.springstart.dto.EmployeeDTO;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
 
 @RestController
 public class EmployeeController {
-    @GetMapping(path = "/employees")
-    public EmployeeDTO getEmployees(){
+    @GetMapping(path = "/employees/{id}")
+    public EmployeeDTO getEmployees(@PathVariable("id") Long empId){
         return new EmployeeDTO(
-                72L,
+                empId,
                 "Archishmaan",
                 LocalDate.of(2025, 6, 21),
                 true
