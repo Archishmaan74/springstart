@@ -9,6 +9,7 @@ package com.springstart.archishmaan.springstart.controllers;
 import com.springstart.archishmaan.springstart.dto.EmployeeDTO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
@@ -23,5 +24,10 @@ public class EmployeeController {
                 LocalDate.of(2025, 6, 21),
                 true
         );
+    }
+
+    @GetMapping(path = "/employees")
+    public String getString(@RequestParam("sortBy") String sortBy){
+        return "Hey! There "+sortBy;
     }
 }
