@@ -11,8 +11,10 @@ import com.springstart.archishmaan.springstart.services.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @RestController
+@RequestMapping(path = "/employees")
 public class EmployeeController {
 
     private final EmployeeService employeeService;
@@ -21,18 +23,29 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @GetMapping(path = "/employees/{id}")
+    @GetMapping
+    public List<EmployeeDTO> getAllEmployees(){
+        return employeeService.getAllEmployees();
+    }
+
+    @GetMapping(path = "/{id}")
     public EmployeeDTO getEmployeesById(@PathVariable("id") Long empId){
         return employeeService.getEmployeeById(empId);
     }
 
-    @GetMapping(path = "/employees")
+    @GetMapping(path = "/age")
     public String getString(@RequestParam("sortBy") String sortBy, @RequestParam("age") Integer age){
         return "Hey! There "+sortBy + " of age " + age;
     }
 
-    @PostMapping(path = "/employees")
+    @PostMapping
     public EmployeeDTO createNewEmployee(@RequestBody EmployeeDTO employeeDTO){
         return employeeService.createNewEmployee(employeeDTO);
     }
+
+    @DeleteMapping(path = "/{id}")
+    public boolean deleteEmployeeById(@PathVariable Long id){
+        return employeeService.deleteEmployeeById(id);
+    }
+
 }
