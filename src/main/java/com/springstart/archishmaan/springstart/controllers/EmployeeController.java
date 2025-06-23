@@ -27,7 +27,7 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "/employees")
-    public String getString(@RequestParam("sortBy") String sortBy){
-        return "Hey! There "+sortBy;
+    public String getString(@RequestParam("sortBy") String sortBy, @RequestParam("age") Integer age){
+        return "Hey! There "+sortBy + " of age " + age;
     }
 }
