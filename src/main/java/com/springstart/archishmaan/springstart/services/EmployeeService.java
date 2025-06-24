@@ -41,4 +41,17 @@ public class EmployeeService {
         employeeRepository.deleteById(id);
         return true;
     }
+
+    public EmployeeDTO updateEmployeeById(Long id, EmployeeDTO updatedEmployeeDTO) {
+        EmployeeEntity existingEntity = employeeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
+
+        existingEntity.setName(updatedEmployeeDTO.getName());
+        existingEntity.setDoj(updatedEmployeeDTO.getDoj());
+        existingEntity.setLoggedIn(updatedEmployeeDTO.isLoggedIn());
+
+        EmployeeEntity updatedEntity = employeeRepository.save(existingEntity);
+        return modelMapper.map(updatedEntity, EmployeeDTO.class);
+    }
+
 }
