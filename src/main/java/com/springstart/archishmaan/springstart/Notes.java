@@ -56,6 +56,12 @@ public class Notes {
     //✅ You can define server ports, logging levels, database URLs, and more here.
     //✅ It allows dynamic configuration without touching Java code.
 
+    // @Override
+    // The @Override annotation in Java is used to indicate that a method is intended to override a method in a superclass or interface.
+    // It helps catch errors at compile-time, such as typos or incorrect method signatures, ensuring the method correctly overrides the parent's method.
+    // This makes the code clearer and easier to maintain, as it explicitly communicates the programmer’s intent and prevents subtle bugs.
+    // Using @Override is considered a best practice for writing reliable and readable Java code.
+
     //✅ MVC in Spring Boot (Model - View - Controller)
     //MVC stands for Model - View - Controller, and it's a pattern used to structure web applications.
     //It separates the application into three parts: how data is handled (Model), how user requests are processed (Controller),
